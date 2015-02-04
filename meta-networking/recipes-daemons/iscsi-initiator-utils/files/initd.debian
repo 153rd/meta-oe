@@ -39,6 +39,10 @@ start() {
 InitiatorName=$INITIATORNAME
 EOF
 	fi
+
+	# Fix label for /etc/iscsi/initiatorname.iscsi if SELinux was enabled
+	test ! -x /sbin/restorecon || /sbin/restorecon -F /etc/iscsi/initiatorname.iscsi
+
 	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON
 	RETVAL=$?
 	starttargets
