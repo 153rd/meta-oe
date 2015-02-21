@@ -9,8 +9,10 @@ INC_PR = "r3"
 
 export XDG_DATA_DIRS = "${STAGING_DATADIR}"
 
-SRC_URI = "http://downloads.freesmartphone.org/sources/${BPN}/${BP}.tar.bz2;name=archive"
+SRC_URI = "https://github.com/freesmartphone/vala-dbus-binding-tool/archive/vdbt-${PV}.tar.gz;name=archive"
 
 inherit autotools perlnative pkgconfig
 
 BBCLASSEXTEND = "native"
+
+S = "${WORKDIR}/vala-dbus-binding-tool-vdbt-${PV}"
