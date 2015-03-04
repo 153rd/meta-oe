@@ -69,7 +69,7 @@ INITSCRIPT_NAME_winbind = "winbind"
 # No dependencies, goes in at level 20 (NOTE: take care with the
 # level, later levels put the shutdown later too - see the links
 # in rc6.d, the shutdown must precede network shutdown).
-INITSCRIPT_PARAMS = "defaults"
+INITSCRIPT_PARAMS = "disable"
 CONFFILES_${PN} = "${sysconfdir}/samba/smb.conf"
 
 do_configure_prepend () {
